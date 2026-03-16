@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lesson — BrightMind Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body style="padding-top:70px">
+<nav class="navbar scrolled" style="background:var(--white)">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">✦</span><span>BrightMind<strong>Academy</strong></span></a>
+    <div class="nav-links" id="navLinks">
+      <a id="back-to-course" href="courses.html">← Back to Course</a>
+      <a href="#" onclick="logout()">Sign Out</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+  <!-- Sidebar -->
+  <div class="lesson-sidebar" id="lesson-sidebar-panel">
+    <h4>Module Lessons</h4>
+    <div id="lessons-sidebar"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="lesson-content">
+    <div class="lesson-breadcrumb" id="lesson-breadcrumb">Course → Module → Lesson</div>
+    <h1 class="lesson-title" id="lesson-title">Lesson Title</h1>
+    <p style="color:var(--gray);font-size:.88rem;margin-bottom:24px" id="lesson-topic">Topic description</p>
+
+    <!-- VIDEO -->
+    <div class="video-container">
+      <div class="video-placeholder" id="video-placeholder" onclick="loadVideo()">
+        <div class="play-btn">▶</div>
+        <p style="font-size:.9rem;opacity:.8">Click to play lesson video</p>
+        <p style="font-size:.75rem;opacity:.5;margin-top:4px">Sample: YouTube / Vimeo embed</p>
+      </div>
+      <iframe id="video-iframe" style="display:none" src="" allowfullscreen></iframe>
+    </div>
+
+    <!-- LESSON TEXT -->
+    <div class="lesson-text">
+      <h3>📖 Lesson Overview</h3>
+      <p>Welcome to this lesson! In this session, we will explore the key concepts and ideas that form the foundation of this topic. Pay close attention to the video above and the notes below before attempting the quiz.</p>
+      <h3>🔑 Key Concepts</h3>
+      <p>This lesson covers the following important points that you should understand by the end:</p>
+      <ul style="margin-left:20px;color:var(--gray);line-height:2;font-size:.93rem">
+        <li>Understanding the core idea and its definition</li>
+        <li>Identifying examples in everyday life</li>
+        <li>Applying the concept through practice exercises</li>
+        <li>Connecting this knowledge with previously learned material</li>
+      </ul>
+      <h3>💡 Remember</h3>
+      <p>Learning is a journey, not a race! Take your time to understand each concept. If something is unclear, re-watch the video or read the PDF material below before attempting the quiz.</p>
+    </div>
+
+    <!-- PDF -->
+    <div class="pdf-section">
+      <h4>📄 Study Material — PDF Notes</h4>
+      <p style="font-size:.82rem;color:var(--gray);margin-bottom:12px">Read through the lesson notes and worksheets below:</p>
+      <!-- In production: replace with actual PDF URL -->
+      <div style="background:var(--white);border-radius:12px;padding:32px;text-align:center;border:2px dashed #e2e8f0">
+        <div style="font-size:3rem;margin-bottom:12px">📄</div>
+        <p style="font-weight:700;margin-bottom:6px">Lesson Notes PDF</p>
+        <p style="color:var(--gray);font-size:.85rem;margin-bottom:16px">Download or view the complete study notes for this lesson</p>
+        <a href="#" style="background:var(--primary);color:#fff;padding:9px 20px;border-radius:8px;font-size:.85rem;font-weight:700;display:inline-block">📥 View / Download PDF</a>
+      </div>
+      <!-- Actual embed (uncomment when you have a PDF URL):
+      <iframe class="pdf-embed" src="https://your-pdf-url.com/lesson.pdf"></iframe>
+      -->
+    </div>
+
+    <!-- LESSON COMPLETE BADGE -->
+    <div class="lesson-complete-badge" id="lesson-complete-badge" style="display:none">
+      <span style="font-size:1.2rem">🏅</span>
+      <span>Lesson already completed! You can review or move to the next lesson.</span>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz-section">
+      <h3>✏️ Knowledge Check Quiz</h3>
+      <p class="quiz-sub">Answer all questions below. You need 60% to pass and mark this lesson complete.</p>
+      <div id="quiz-container"></div>
+      <div class="quiz-actions">
+        <button class="btn-submit" id="submit-quiz">Submit Answers</button>
+        <button class="btn-next-lesson" id="btn-next">Next Lesson →</button>
+      </div>
+      <div class="quiz-result" id="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+function loadVideo() {
+  // Sample video - replace with actual lesson video URLs
+  const iframe = document.getElementById('video-iframe');
+  const placeholder = document.getElementById('video-placeholder');
+  iframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
+  iframe.style.display = 'block';
+  placeholder.style.display = 'none';
+}
+
+function logout() {
+  localStorage.removeItem('bma_student');
+  window.location.href = 'index.html';
+}
+
+// Update breadcrumb
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject') || 'english';
+  const cls = params.get('class') || '3';
+  const module = params.get('module') || '1';
+  const lesson = params.get('lesson') || '1';
+  const bc = document.getElementById('lesson-breadcrumb');
+  if (bc) bc.innerHTML = `<a href="courses.html">Courses</a> → <a href="course-detail.html?subject=${subject}&class=${cls}">Course</a> → Module ${module} → Lesson ${lesson}`;
+  const backLink = document.getElementById('back-to-course');
+  if (backLink) backLink.href = `course-detail.html?subject=${subject}&class=${cls}`;
+});
+</script>
+</body>
+</html>

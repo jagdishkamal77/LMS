@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign In — BrightMind Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card">
+    <a href="index.html" class="logo" style="text-decoration:none;display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:24px;font-family:var(--font-display);font-size:1.3rem;font-weight:900;color:var(--dark)">
+      <span style="color:var(--accent);font-size:1.5rem">✦</span> BrightMind<strong>Academy</strong>
+    </a>
+    <h2>Welcome Back!</h2>
+    <p class="auth-sub">Sign in to continue your learning journey.</p>
+    <div class="success-msg" id="login-error" style="background:#fef2f2;border-color:#fca5a5;color:#991b1b;display:none"></div>
+    <form id="signin-form">
+      <div class="form-group">
+        <label>Username or Email</label>
+        <input type="text" name="username" placeholder="ravi.sharma42 or email" required/>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Your password" required/>
+      </div>
+      <div style="text-align:right;margin-bottom:16px;font-size:.82rem"><a href="#" style="color:var(--primary)">Forgot password?</a></div>
+      <button type="submit" class="btn-auth">Sign In →</button>
+    </form>
+    <p class="auth-footer">New student? <a href="signup.html">Create free account</a></p>
+    <div style="margin-top:20px;padding:14px;background:#eff6ff;border-radius:10px;font-size:.82rem;color:var(--gray)">
+      <strong>Demo:</strong> Sign up first to get credentials, or use any username/password you registered with.
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

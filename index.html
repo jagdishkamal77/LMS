@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BrightMind Academy — Learn. Grow. Excel.</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- WhatsApp Popup -->
+<div id="wa-bubble" class="wa-bubble" onclick="toggleWA()">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.118 1.528 5.847L0 24l6.335-1.512A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.003-1.374l-.36-.214-3.728.89.938-3.617-.235-.372A9.799 9.799 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</div>
+<div id="wa-popup" class="wa-popup hidden">
+  <div class="wa-header">
+    <span>💬 Chat with Us</span>
+    <button onclick="toggleWA()">✕</button>
+  </div>
+  <div class="wa-body">
+    <p>Hi there! 👋 Have questions about our courses?</p>
+    <a href="https://wa.me/911234567890?text=Hello!%20I%20want%20to%20know%20more%20about%20BrightMind%20Academy" target="_blank" class="wa-btn">Open WhatsApp</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">✦</span>
+      <span>BrightMind<strong>Academy</strong></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#courses">Courses</a>
+      <a href="#services">Services</a>
+      <a href="#teachers">Teachers</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="signin.html" class="btn-outline">Sign In</a>
+      <a href="signup.html" class="btn-filled">Sign Up Free</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">🏆 Trusted by 10,000+ Students</div>
+    <h1 class="hero-title">
+      Learning That<br/>
+      <span class="highlight">Lights Up</span><br/>
+      Young Minds
+    </h1>
+    <p class="hero-sub">Interactive courses in English, Maths & Science for Classes 1–5. Expert teachers, fun lessons, and certificates that matter.</p>
+    <div class="hero-cta">
+      <a href="signup.html" class="btn-hero">🚀 Get Started Free</a>
+      <a href="#courses" class="btn-ghost">Explore Courses ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>3</strong><span>Subjects</span></div>
+      <div class="stat"><strong>5</strong><span>Classes</span></div>
+      <div class="stat"><strong>75+</strong><span>Courses</span></div>
+      <div class="stat"><strong>500+</strong><span>Lessons</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card card-float1">
+      <span>📖</span> English — Class 3
+      <div class="progress-bar"><div style="width:65%"></div></div>
+    </div>
+    <div class="hero-card card-float2">
+      <span>🔢</span> Maths — Class 2
+      <div class="progress-bar"><div style="width:40%"></div></div>
+    </div>
+    <div class="hero-card card-float3">
+      <span>🌍</span> Science — Class 5
+      <div class="progress-bar"><div style="width:88%"></div></div>
+    </div>
+    <div class="hero-cert">🎓 Certificate Earned!</div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section" id="courses">
+  <div class="container">
+    <div class="section-tag">Our Curriculum</div>
+    <h2 class="section-title">Explore Our <span>Courses</span></h2>
+    <p class="section-sub">Carefully designed for Classes 1 through 5 — aligned with curriculum, taught with love.</p>
+    <div class="subjects-grid">
+      <div class="subject-card english">
+        <div class="subject-icon">📖</div>
+        <h3>English</h3>
+        <p>Reading, writing, grammar, comprehension & storytelling skills for young learners.</p>
+        <div class="class-tags">
+          <span>Class 1</span><span>Class 2</span><span>Class 3</span><span>Class 4</span><span>Class 5</span>
+        </div>
+        <a href="courses.html" class="card-btn">View Courses →</a>
+      </div>
+      <div class="subject-card maths">
+        <div class="subject-icon">🔢</div>
+        <h3>Mathematics</h3>
+        <p>Numbers, shapes, operations, patterns and problem-solving through fun activities.</p>
+        <div class="class-tags">
+          <span>Class 1</span><span>Class 2</span><span>Class 3</span><span>Class 4</span><span>Class 5</span>
+        </div>
+        <a href="courses.html" class="card-btn">View Courses →</a>
+      </div>
+      <div class="subject-card science">
+        <div class="subject-icon">🌍</div>
+        <h3>The World Around Us</h3>
+        <p>Science, nature, environment, living things and our universe — explored with curiosity.</p>
+        <div class="class-tags">
+          <span>Class 1</span><span>Class 2</span><span>Class 3</span><span>Class 4</span><span>Class 5</span>
+        </div>
+        <a href="courses.html" class="card-btn">View Courses →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-tag">What We Offer</div>
+    <h2 class="section-title">Everything Your Child <span>Needs</span></h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">🎬</div>
+        <h4>Video Lessons</h4>
+        <p>Engaging animated and teacher-led video lessons for every topic.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📄</div>
+        <h4>PDF Study Material</h4>
+        <p>Downloadable worksheets and notes embedded in every lesson.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">✅</div>
+        <h4>Interactive Quizzes</h4>
+        <p>MCQ and fill-in-the-blank quizzes after every lesson to test understanding.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📊</div>
+        <h4>Progress Tracking</h4>
+        <p>Visual progress indicators showing completion across all courses.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🏆</div>
+        <h4>Certificates</h4>
+        <p>Auto-generated certificates upon scoring 75%+ on the final assessment.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">👨‍🏫</div>
+        <h4>Expert Teachers</h4>
+        <p>Courses designed and reviewed by experienced primary school educators.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📱</div>
+        <h4>Mobile Friendly</h4>
+        <p>Learn from any device — phone, tablet, or computer, anytime.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🔒</div>
+        <h4>Safe for Kids</h4>
+        <p>100% child-safe content with parental notification support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="container">
+    <div class="section-tag">Simple Steps</div>
+    <h2 class="section-title">How It <span>Works</span></h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">01</div><h4>Sign Up Free</h4><p>Create your account in under a minute. Get login credentials via email.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">02</div><h4>Choose Your Class</h4><p>Select your class (1–5) and pick a subject to start learning.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">03</div><h4>Complete Lessons</h4><p>Watch videos, read PDFs, and take quizzes in each lesson.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">04</div><h4>Earn Certificate</h4><p>Pass the final exam with 75%+ and download your certificate!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section class="section teachers-section" id="teachers">
+  <div class="container">
+    <div class="section-tag">Meet the Educators</div>
+    <h2 class="section-title">Our <span>Expert Teachers</span></h2>
+    <div class="teachers-grid">
+      <div class="teacher-card">
+        <div class="teacher-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">SJ</div>
+        <h4>Mrs. Sunita Joshi</h4>
+        <p class="teacher-role">English Educator</p>
+        <p class="teacher-bio">15+ years teaching primary English. Passionate about storytelling and creative writing.</p>
+        <div class="teacher-tags"><span>Class 1–3</span><span>English</span></div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">RK</div>
+        <h4>Mr. Rajesh Kumar</h4>
+        <p class="teacher-role">Mathematics Educator</p>
+        <p class="teacher-bio">M.Ed in Mathematics. Makes numbers fun with visual and hands-on learning methods.</p>
+        <div class="teacher-tags"><span>Class 3–5</span><span>Maths</span></div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">AP</div>
+        <h4>Ms. Ananya Patel</h4>
+        <p class="teacher-role">Science Educator</p>
+        <p class="teacher-bio">BSc Biology, MEd. Brings science to life through experiments and nature exploration.</p>
+        <div class="teacher-tags"><span>Class 1–5</span><span>Science</span></div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar" style="background:linear-gradient(135deg,#fa709a,#fee140)">PM</div>
+        <h4>Mrs. Priya Mehta</h4>
+        <p class="teacher-role">English & Literacy</p>
+        <p class="teacher-bio">Specialist in early literacy and phonics. Designs engaging reading programs for Class 4–5.</p>
+        <div class="teacher-tags"><span>Class 4–5</span><span>English</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-tag">What Parents Say</div>
+    <h2 class="section-title">Real Stories, Real <span>Results</span></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"My daughter went from struggling with Maths to loving it! The video lessons are so clear and the quizzes keep her engaged."</p>
+        <div class="testi-author"><div class="testi-avatar">NK</div><div><strong>Neha Kapoor</strong><span>Mother of Class 3 Student</span></div></div>
+      </div>
+      <div class="testimonial-card featured">
+        <div class="stars">★★★★★</div>
+        <p>"The certificate my son earned made him so proud. He completed the entire English course in 3 weeks and didn't need any pushing from us!"</p>
+        <div class="testi-author"><div class="testi-avatar">AS</div><div><strong>Amit Sharma</strong><span>Father of Class 4 Student</span></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Excellent platform for primary students. The World Around Us course is wonderfully detailed and age-appropriate."</p>
+        <div class="testi-author"><div class="testi-avatar">RP</div><div><strong>Roshni Pillai</strong><span>Mother of Class 2 Student</span></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★☆</div>
+        <p>"Great structured learning. My twins use it daily after school. Progress tracking helps me see how they're doing."</p>
+        <div class="testi-author"><div class="testi-avatar">VG</div><div><strong>Vikram Gupta</strong><span>Father of Class 1 Students</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <h2>Ready to Start Learning?</h2>
+    <p>Join thousands of students already learning on BrightMind Academy — completely free to get started.</p>
+    <a href="signup.html" class="btn-cta-white">🎓 Join Free Today</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">✦ BrightMind Academy</div>
+      <p>Interactive learning platform for Classes 1–5. Making quality education accessible for every child.</p>
+    </div>
+    <div>
+      <h5>Courses</h5>
+      <a href="courses.html">English</a>
+      <a href="courses.html">Mathematics</a>
+      <a href="courses.html">Science</a>
+    </div>
+    <div>
+      <h5>Platform</h5>
+      <a href="#">For Students</a>
+      <a href="#">For Parents</a>
+      <a href="#">For Teachers</a>
+    </div>
+    <div>
+      <h5>Support</h5>
+      <a href="#">Help Center</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 BrightMind Academy. All rights reserved.</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

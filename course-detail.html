@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Course Details — BrightMind Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav class="navbar scrolled" style="background:var(--white)">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">✦</span><span>BrightMind<strong>Academy</strong></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="courses.html">← My Courses</a>
+      <a href="#" onclick="logout()">Sign Out</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<div class="course-detail">
+  <div class="course-hero">
+    <div class="breadcrumb">
+      <a href="courses.html">My Courses</a> → <span id="breadcrumb-subject">Course</span>
+    </div>
+    <h1 id="course-title-hero">Course Title</h1>
+    <p id="course-desc-hero">Course description goes here.</p>
+    <div class="course-meta-pills">
+      <span class="pill" id="course-class-pill">Class 3</span>
+      <span class="pill" id="course-subject-pill">English</span>
+      <span class="pill" id="course-modules-pill">6 Modules</span>
+      <span class="pill" id="course-lessons-pill">30 Lessons</span>
+    </div>
+  </div>
+
+  <div class="course-body">
+    <div class="course-main">
+      <h2>📋 Course Description</h2>
+      <p id="course-full-desc" style="color:var(--gray);line-height:1.8;font-size:.95rem">This course is carefully designed for young learners to build strong foundational skills. Each lesson combines video instruction, reading material, and interactive quizzes to ensure complete understanding before progression.</p>
+
+      <h2>🎯 Why Take This Course?</h2>
+      <div class="why-grid">
+        <div class="why-item"><span class="check">✅</span><span>Build strong foundational knowledge aligned with the curriculum</span></div>
+        <div class="why-item"><span class="check">✅</span><span>Learn at your own pace with structured, self-paced lessons</span></div>
+        <div class="why-item"><span class="check">✅</span><span>Test understanding with quizzes after every lesson</span></div>
+        <div class="why-item"><span class="check">✅</span><span>Earn a verified certificate upon course completion</span></div>
+        <div class="why-item"><span class="check">✅</span><span>Access video lessons, PDFs and notes in one place</span></div>
+        <div class="why-item"><span class="check">✅</span><span>Expert teacher-designed content for maximum learning</span></div>
+      </div>
+
+      <h2>📚 Course Modules</h2>
+      <div class="module-list" id="module-list"></div>
+
+      <div id="assessment-btn" style="display:none;margin-top:20px">
+        <a href="#" class="btn-hero" style="display:inline-block">🏆 Take Final Assessment</a>
+      </div>
+    </div>
+
+    <div class="course-sidebar">
+      <div class="sidebar-card">
+        <h4>📊 Course Progress</h4>
+        <div class="overall-progress">
+          <div class="label"><span>Overall Completion</span><span id="overall-progress-label">0%</span></div>
+          <div class="bar"><div id="overall-progress-bar" style="width:0%"></div></div>
+        </div>
+        <br/>
+        <div class="sidebar-stat"><span>Total Modules</span><strong id="course-modules-stat">6</strong></div>
+        <div class="sidebar-stat"><span>Total Lessons</span><strong id="course-lessons-stat">30</strong></div>
+        <div class="sidebar-stat"><span>Certificate</span><strong>On 75%+ score</strong></div>
+        <div class="sidebar-stat"><span>Language</span><strong>English</strong></div>
+        <button class="enroll-btn" onclick="startCourse()">▶ Start Learning</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+function startCourse() {
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject') || 'english';
+  const cls = params.get('class') || '3';
+  window.location.href = `lesson.html?subject=${subject}&class=${cls}&module=1&lesson=1`;
+}
+function logout() {
+  localStorage.removeItem('bma_student');
+  window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>

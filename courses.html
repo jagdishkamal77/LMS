@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Courses — BrightMind Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav class="navbar scrolled" style="background:var(--white)">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">✦</span><span>BrightMind<strong>Academy</strong></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="courses.html" style="color:var(--primary);font-weight:700">My Courses</a>
+      <a href="#" onclick="logout()">Sign Out</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<div class="dashboard">
+  <div class="dash-header">
+    <div class="container">
+      <h1 id="student-greeting">Welcome back! 👋</h1>
+      <p>Choose your class and start learning — every lesson brings you closer to your certificate!</p>
+    </div>
+  </div>
+  <div class="dash-body">
+    <h3 style="margin-bottom:14px;font-family:var(--font-display);font-size:1.1rem;font-weight:800">Select Your Class</h3>
+    <div class="class-selector">
+      <button class="class-btn active" data-class="1">Class 1</button>
+      <button class="class-btn" data-class="2">Class 2</button>
+      <button class="class-btn" data-class="3">Class 3</button>
+      <button class="class-btn" data-class="4">Class 4</button>
+      <button class="class-btn" data-class="5">Class 5</button>
+    </div>
+    <div class="courses-list" id="courses-container"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+function logout() {
+  localStorage.removeItem('bma_student');
+  window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>

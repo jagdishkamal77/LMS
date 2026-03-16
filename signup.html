@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign Up — BrightMind Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card">
+    <a href="index.html" class="logo" style="text-decoration:none;display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:24px;font-family:var(--font-display);font-size:1.3rem;font-weight:900;color:var(--dark)">
+      <span style="color:var(--accent);font-size:1.5rem">✦</span> BrightMind<strong>Academy</strong>
+    </a>
+    <h2>Create Your Account</h2>
+    <p class="auth-sub">Join free and start learning today!</p>
+
+    <div class="success-msg" id="success-msg">
+      <strong>🎉 Account Created!</strong><br/>
+      Your login credentials have been sent to your email. Check your inbox!<br/>
+      <span id="success-creds" style="margin-top:6px;display:block;font-family:monospace;font-size:.85rem;background:#dcfce7;padding:8px;border-radius:6px;margin-top:8px"></span>
+      <a href="signin.html" style="display:inline-block;margin-top:14px;background:var(--primary);color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:.9rem;">Sign In Now →</a>
+    </div>
+
+    <form id="signup-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" name="firstname" placeholder="Ravi" required/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" name="lastname" placeholder="Sharma" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="fullname" placeholder="Ravi Sharma" required/>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="parent@email.com" required/>
+      </div>
+      <div class="form-group">
+        <label>Student's Class</label>
+        <select name="class" required>
+          <option value="">Select Class</option>
+          <option value="1">Class 1</option>
+          <option value="2">Class 2</option>
+          <option value="3">Class 3</option>
+          <option value="4">Class 4</option>
+          <option value="5">Class 5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Parent/Guardian Phone</label>
+        <input type="tel" name="phone" placeholder="+91 98765 43210"/>
+      </div>
+      <button type="submit" class="btn-auth">🚀 Create Free Account</button>
+    </form>
+
+    <p class="auth-footer">Already have an account? <a href="signin.html">Sign In</a></p>
+    <p style="text-align:center;font-size:.76rem;color:var(--gray);margin-top:12px">By signing up, you agree to our Terms of Service and Privacy Policy.</p>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

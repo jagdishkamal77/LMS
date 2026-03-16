@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Your Certificate — BrightMind Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+@media print {
+  nav, .cert-actions, .print-note { display: none !important; }
+  body { background: white !important; padding: 0; }
+  .certificate-page { padding: 20px; }
+  #certificate { box-shadow: none; border-color: #d4af37; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar scrolled" style="background:var(--white)">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">✦</span><span>BrightMind<strong>Academy</strong></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="courses.html">← My Courses</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<div class="certificate-page">
+  <div style="text-align:center;margin-bottom:28px">
+    <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:900;margin-bottom:6px">🎉 Congratulations!</h2>
+    <p style="color:var(--gray)">You've successfully completed the course. Here is your certificate!</p>
+  </div>
+
+  <div id="certificate">
+    <!-- Decorative Corner Elements -->
+    <div style="position:absolute;top:16px;left:16px;font-size:1.5rem;color:rgba(245,158,11,.3)">❋</div>
+    <div style="position:absolute;top:16px;right:16px;font-size:1.5rem;color:rgba(245,158,11,.3)">❋</div>
+    <div style="position:absolute;bottom:16px;left:16px;font-size:1.5rem;color:rgba(245,158,11,.3)">❋</div>
+    <div style="position:absolute;bottom:16px;right:16px;font-size:1.5rem;color:rgba(245,158,11,.3)">❋</div>
+
+    <div class="cert-logo">✦ BrightMind Academy</div>
+    <div class="cert-title">Certificate of Course Completion</div>
+
+    <div style="width:60px;height:2px;background:var(--accent);margin:0 auto 20px"></div>
+
+    <div class="cert-of-completion">This is to certify that</div>
+    <div class="cert-presents" style="margin:8px 0">the following student has successfully completed</div>
+
+    <div class="cert-name" id="cert-student-name">Student Name</div>
+
+    <div class="cert-body">
+      has successfully demonstrated understanding and mastery of all modules in the course
+    </div>
+
+    <div class="cert-course" id="cert-course-title">Course Title</div>
+    <div style="font-size:.85rem;color:var(--gray);margin-top:4px">BrightMind Academy · Primary Education Programme</div>
+    <div id="cert-score" style="margin-top:8px;display:inline-block;background:linear-gradient(135deg,#d1fae5,#a7f3d0);color:#065f46;padding:4px 14px;border-radius:100px;font-size:.82rem;font-weight:700">Score: 80%</div>
+
+    <div class="cert-footer">
+      <div class="cert-sig">
+        <div class="sig-line"></div>
+        <p><strong>Mrs. Sunita Joshi</strong></p>
+        <p>Course Educator</p>
+        <p style="color:#94a3b8">BrightMind Academy</p>
+      </div>
+      <div class="cert-stamp">🏅</div>
+      <div class="cert-date-loc">
+        <p><strong>Date of Issue</strong></p>
+        <p id="cert-date">March 16, 2025</p>
+        <p style="margin-top:6px;color:#94a3b8;font-size:.75rem">Certificate ID: BMA-<span id="cert-id"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-actions">
+    <button class="btn-download" id="download-cert" onclick="window.print()">🖨️ Print / Download Certificate</button>
+    <a href="courses.html" class="btn-share">← Continue Learning</a>
+  </div>
+
+  <p class="print-note" style="text-align:center;color:var(--gray);font-size:.8rem;margin-top:16px">
+    Use your browser's print function (Ctrl+P / Cmd+P) and select "Save as PDF" to download.
+  </p>
+</div>
+
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Generate unique cert ID
+  const certId = 'BMA' + Date.now().toString(36).toUpperCase().slice(-6);
+  const certIdEl = document.getElementById('cert-id');
+  if (certIdEl) certIdEl.textContent = certId;
+});
+</script>
+</body>
+</html>
